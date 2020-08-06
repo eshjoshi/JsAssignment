@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <title> </title>
+
+  <head> </head>
+
+  <style>
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: red;
+    }
+  </style>
+
+  <body>
+    <p>
+      11.Create a Javascript program which will animate div from left to right
+      and right to left once it reaches the end of browser window.(HINT: use
+      setTimeout and / or setIntervalfunctions)
+    </p>
+    <div onclick="myMove()" id="animate"></div>
+
+    <script>
+      function myMove() {
+        var elem = document.getElementById("animate");
+        var pos = 0;
+        var setPos = window.innerWidth;
+        var add = 1;
+        var id = setInterval(frame, 5);
+        function frame() {
+          if (pos == setPos) {
+            setPos = 0;
+            add = -1;
+            //clearInterval(id);
+          } else {
+            pos = pos + add;
+            elem.style.right = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

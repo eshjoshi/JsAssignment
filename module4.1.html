@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+
+      img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+      .fullpage {
+        width: 100%;
+      }
+      .firstHalf {
+        width: 50%;
+        float: left;
+      }
+      .secondHalf {
+        width: 50%;
+        float: left;
+      }
+    </style>
+    <script>
+      const buttonToggle = () => {
+        var x = document.getElementById("image");
+        if (x.style.opacity == 0.5) {
+          x.style.opacity = 1;
+        } else {
+          x.style.opacity = 0.5;
+        }
+      };
+      const imageShow = () => {
+        document.getElementById(
+          "image"
+        ).innerHTML = `<img src=${event.target.src} style="width:400px"/>`;
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      12. Create onediv having6 images. Create onemorediv covering half of the
+      webpage. Perform the following tasks using Javascript.Arrange thumbnails
+      of Images horizontally in the first div.Byclicking on any image, display
+      that image in a secondbigger div.Create one Button‘Toggle Transparency’.
+      Click on thisbutton will toggle the transparency of the same image in
+      second div.You can use necessary DOM API.
+    </p>
+    <div class="fullpage">
+      <div class="firstHalf">
+        <img
+          src="./image/1.jpg"
+          alt="Forest"
+          style="width: 150px;"
+          onclick="imageShow()"
+        />
+        <img
+          src="./image/2.jpg"
+          alt="Forest"
+          style="width: 150px;"
+          onclick="imageShow()"
+        />
+        <img
+          src="./image/6.jpg"
+          alt="Forest"
+          style="width: 150px;"
+          onclick="imageShow()"
+        />
+        <img
+          src="./image/4.jpg"
+          alt="Forest"
+          style="width: 150px;"
+          onclick="imageShow()"
+        />
+        <img
+          src="./image/5.jpg"
+          alt="Forest"
+          style="width: 150px;"
+          onclick="imageShow()"
+        />
+        <img
+          src="./image/3.jpg"
+          alt="Forest"
+          style="width: 150px;"
+          onclick="imageShow()"
+        />
+      </div>
+      <div class="secondHalf">
+        <button onclick="buttonToggle()">Transparency</button>
+        <div id="image"></div>
+      </div>
+    </div>
+  </body>
+</html>

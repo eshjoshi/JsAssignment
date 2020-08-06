@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <style>
+      .calculatorButton {
+        width: 12%;
+      }
+      .button {
+        width: auto;
+      }
+    </style>
+    <script>
+      function onkeyPress(val) {
+        document.getElementById("calculator").value += val;
+      }
+      function equal() {
+        let x = document.getElementById("calculator").value;
+        let y = eval(x);
+        document.getElementById("calculator").value = y;
+      }
+      function clear() {
+        document.getElementById("calculator").value = "";
+      }
+
+
+    </script>
+
+    <p>
+      9. Design a simple calculator using basic HTML elements and implement the
+      following functionalities:Use Unobtrusive approach for event
+      handling.1.Add, Subtract, Divide and multiplybuttons to display values in
+      result box. Note the values should be appended.2.Clear button to clear the
+      result box.3.Result button to display final result in result box.If
+      possible show o/p for this assignment-after implementation.
+    </p>
+    <table>
+      <tr>
+        <td><input type="button" value="c" onclick="clear()" /></td>
+        <td colspan="3"><input type="text" id="calculator" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="+" onclick="onkeyPress('+')" /></td>
+        <td><input type="button" value="1" onclick="onkeyPress('1')" /></td>
+        <td><input type="button" value="2" onclick="onkeyPress('2')" /></td>
+        <td><input type="button" value="3" onclick="onkeyPress('3')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="-" onclick="onkeyPress('-')" /></td>
+        <td><input type="button" value="4" onclick="onkeyPress('4')" /></td>
+        <td><input type="button" value="5" onclick="onkeyPress('5')" /></td>
+        <td><input type="button" value="6" onclick="onkeyPress('6')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="*" onclick="onkeyPress('*')" /></td>
+        <td><input type="button" value="7" onclick="onkeyPress('7')" /></td>
+        <td><input type="button" value="8" onclick="onkeyPress('8')" /></td>
+        <td><input type="button" value="9" onclick="onkeyPress('9')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="/" onclick="onkeyPress('/')" /></td>
+        <td><input type="button" value="." onclick="onkeyPress('.')" /></td>
+        <td><input type="button" value="0" onclick="onkeyPress('0')" /></td>
+        <!-- Evaluating function call eval()-->
+        <td><input type="button" value="=" onclick="equal()" /></td>
+      </tr>
+    </table>
+
+    <p>
+      Writea Javascriptprogram to handle event propagation for following HTML
+      DOM structurei.e. div -> button -> img handle click event with bubblingand
+      also try and click event with capturingfor following hierarchy.
+    </p>
+    <div style="padding:30px;">
+        <Button>
+            <img src='https://images.unsplash.com/photo-1532767153582-b1a0e5145009?ixlib=rb-1.2.1&w=1000&q=80'style="width: 100px; height: 100px;"></img>
+        </Button>
+    </div>
+<script>
+    function showAlert(event) {
+        alert("You clicked: "+ this.tagName);
+        event.stopPropagation();
+    }
+
+    var elems = document.querySelectorAll("div, Button, img");
+    for(let elem of elems) {
+        elem.addEventListener("click", showAlert);
+    }
+    </script>
+  </body>
+</html>

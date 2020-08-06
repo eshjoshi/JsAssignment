@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 5px;
+        text-align: left;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      th {
+        font-weight: bold;
+      }
+      tbody td:nth-child(even) {
+        color: orange;
+      }
+      tbody tr:last-child {
+        font-style: italic;
+      }
+      tbody td:first-child {
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      function showData() {
+        var theSelect = demoForm.demoSelect;
+
+        alert(
+          "Index:-" +
+            theSelect.selectedIndex +
+            "  " +
+            "TotalCount:-" +
+            theSelect.length +
+            "  " +
+            "Its text is: " +
+            theSelect[theSelect.selectedIndex].text
+        );
+      }
+    </script>
+
+    <p>
+      Create a dropdown list using HTML. Write a JavaScript program to count and
+      display the items of that dropdown list and display in an alert window.
+    </p>
+    <form name="demoForm">
+      <select name="demoSelect" onchange="showData()">
+        <option value="zilch">Select:</option>
+        <option value="A">Option 1</option>
+        <option value="B">Option 2</option>
+        <option value="C">Option 3</option>
+      </select>
+    </form>
+
+    <p>
+      Create a table in HTML code & Write a JavaScript code to perform following
+      tasks.1. Give an alternate background colors to rows.2. Header should have
+      bold font.3. Give alternate text color to column elements. 4. Last element
+      of each column should have italic font.5. First element of each row should
+      haveunderlined font style.
+    </p>
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th>Heading1</th>
+          <th>Heading2</th>
+          <th>Heading3</th>
+          <th>Heading4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>3</td>
+          <td>3</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>4</td>
+          <td>4</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    
+  </body>
+</html>

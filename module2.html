@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      var bank = [
+        { name: "JOHN", account: "Saving", AccountStatus: "blocked" },
+        { name: "KATE", account: "Current", AccountStatus: "active" },
+        { name: "MIKE", account: "Saving", AccountStatus: "active" },
+      ];
+      document.write(
+        "Write a Javascript program to display account status ofapersonby accepting his/ her name. You can use following kind of collection to get the information. Program would display name, account type and appropriate message based on Account Status value. E.g. for JOHN AccountStatus is ‘blocked’ so message would be ‘You need to activate your account’. If any user has AccountStatus as ‘active’, message would be ‘Account is Active’. "
+      );
+      document.write("<br/>");
+
+      document.write("<b> OutPut :- Banks Details</b>");
+      document.write("<br/>");
+
+      bank.map((bankDetails) => {
+        document.write("Name :- ");
+        document.write(bankDetails.name);
+        document.write("<br/>");
+        document.write("Account :- ");
+        document.write(bankDetails.account);
+        document.write("<br/>");
+
+        if (bankDetails.AccountStatus === "blocked") {
+          document.write("You need to activate your account");
+          document.write("<br/>");
+          document.write("<br/>");
+        } else {
+          document.write("Account is Active");
+          document.write("<br/>");
+          document.write("<br/>");
+        }
+      });
+
+      document.write(
+        "Write a JavaScript function where the keys become the values and the values become the keysfor the given Object:{Name:”Sachin”, City:”Pune” , Age:”42”}"
+      );
+      document.write("<br/>");
+
+      document.write("<b> OutPut :-</b>");
+      document.write("<br/>");
+      var input = { Name: "Sachin", City: "Pune", Age: "42" };
+      var output = {};
+
+      for (var i = 0; i < Object.keys(input).length; i++) {
+        output[Object.values(input)[i]] = Object.keys(input)[i];
+      }
+      document.write(JSON.stringify(output));
+
+      class Person {
+        constructor(name, location) {
+          this.name = name;
+          this.location = location;
+        }
+
+        eat() {
+          return "I like sea food";
+        }
+
+        introduction() {
+          return `My name is ${this.name}  and  I am from ${this.location}`;
+        }
+      }
+
+      class Developer extends Person {
+        constructor(name, location, projects) {
+          super(name, location); // Now 'this' is initialized by calling the parent constructor.
+          this.projects = projects;
+        }
+      }
+
+     let person = new Person("eshwar", "pune");
+
+      let projects = ["Avni", "MVA", "1Louve"];
+
+      let devloper = new Developer("eshwar", "pune", projects);
+      Developer.prototype.takeLeave = function () {
+        return "I am on leave next week";
+      };
+      Developer.prototype.introduction = function () {
+        return `My name is ${devloper.name}  ,  I am from ${devloper.location} and I am allocated in - ${devloper.projects[0]}`;
+      };
+
+    //   console.log(devloper.eat());
+      console.log(devloper.introduction());
+      console.log(devloper.takeLeave());
+      console.log(devloper.eat());   //
+      console.log(person.introduction()); // get data from person class
+
+
+    </script>
+    
+  </body>
+</html>

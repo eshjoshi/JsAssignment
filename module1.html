@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      document.getElementById('esh').innerHTML="eshwar";
+
+      const getTempInFahrenheit = () => {
+        var celsius = prompt("Add Temperature in Celsius", 0);
+        if (celsius != null) {
+          document.getElementById("fahrenheit").innerHTML =
+            (celsius * 9) / 5 + 32 + "°F";
+        }
+      };
+      const getTempInCelsius = () => {
+        var fahrenheit = prompt("Add Temperature in Fahrenheit", 0);
+        if (fahrenheit != null) {
+          document.getElementById("celsius").innerHTML =
+            ((fahrenheit - 32) * 5) / 9 + "°C";
+        }
+      };
+
+      const getStarOutput = () => {
+        var i, j;
+        for (i = 1; i <= 6; i++) {
+          for (j = 1; j <= i; j++) {
+            document.write("*");
+          }
+          document.write("<br />");
+        }
+      };
+
+      const getStringOutput = () => {
+      const longer = (champ,contender)=> (contender.length > champ.length) ? contender : champ;
+
+        var string = prompt("Add String", "");
+        var words = string.split(' ');
+        if (string != null) {
+          document.getElementById("stringOutput").innerHTML =
+          words.reduce(longer)
+        }
+      };
+    </script>
+
+    <p>
+      Write a JavaScript program to create a temperature converter.Accept
+      temperature values from end user in Celsius/Fahrenheit using
+      prompt.HINT:Formula: c/5 = (f-32)/9[Where c = temperature in Celsius and f
+      = temperature in Fahrenheit].
+    </p>
+
+    <button onclick="getTempInFahrenheit()">Temperature in Celsius</button>
+    <button onclick="getTempInCelsius()">Temperature in Fahrenheit</button>
+
+    <p id="celsius"></p>
+    <p id="fahrenheit"></p>
+
+    <p>
+      Write a JavaScript program to show output as given below: 3.Write a
+      JavaScript program to show output as given below:** ** * ** * * ** * * *
+      ** * * * * *
+    </p>
+    <button onclick="getStarOutput()">Star Output</button>
+
+    <p>
+      Write a JavaScript program to input a string and find the longest word
+      within the string.(Hint: Usestring length property to compare).
+    </p>
+    <button onclick="getStringOutput()">String Output</button>
+    <p id="stringOutput"></p>
+  </body>
+</html>
